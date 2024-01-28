@@ -44,10 +44,9 @@ Route::get('users/{id}', function ($id) {
     return $id;
 });
 Route::get('/categories/{category:slug}',function (Category $category){
-    return view('category',[
-        'title' => $category->name,
-        'blogs' => $category->blogs,
-        'category' => $category->name
+    return view('blog',[
+        'title' => "Post By Category : $category->name",
+        'blog' => $category->blogs,
     ]);
 });
 Route::get('/categories',function(){
@@ -57,7 +56,7 @@ Route::get('/categories',function(){
         'category' => Category::all()
     ]);
 });
-Route::get('users/blog/{user:name}',function (User $user){
+Route::get('users/blog/{user:username}',function (User $user){
     return view('user_blogs',[
         'title' => $user->name,
         'author' => $user->name,

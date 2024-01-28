@@ -6,7 +6,7 @@
     <ul>
         <li>
             <h2><a href="/categories/{{$categories->slug}}">
-                {{$categories->name}}</h2>
+                {{$categories->slug}}</h2>
             </a>
         </li>
     </ul>

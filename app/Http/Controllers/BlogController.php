@@ -8,8 +8,9 @@ class BlogController
 {
     public function index(){
         return view('blog',[
-            'title' => 'Blog',
-            'blog' => Blog::all()
+            'title' => 'All Blog',
+            'blog' => Blog::latest()->get()
+            // 'blog' => Blog::all()
         ]);
     }
     public function show(Blog $post){
